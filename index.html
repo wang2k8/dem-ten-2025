@@ -1,0 +1,268 @@
+<html lang="vi" class=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm ngược Tết Nguyên Đán 2025</title>
+    <style>
+        @font-face {
+            font-family: 'VietnameseTet';
+            src: url('https://example.com/fonts/vietnamese-tet.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'VietnameseTet', sans-serif;
+            background: linear-gradient(135deg, #ffcccc, #ff9966);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('nen.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .content {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            width: 90%;
+            max-width: 540px;  /* Reduced by 10% from 600px */
+            min-width: 280px;
+        }
+
+        .content h1 {
+            font-size: 3.5rem;  /* Slightly smaller font size for better balance */
+            color: #ffcc00;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .date {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        #footerDate {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #ffcc00;
+        }
+
+        .countdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5vw;
+            font-size: 5.5vw;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            margin-top: 20px;
+        }
+
+        .unit {
+            text-align: center;
+            flex: 1 1 calc(20% - 20px);
+            min-width: 60px;
+            margin: 0 10px;
+        }
+
+        .unit span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #ffcc00;
+        }
+
+        .music-controls {
+            position: fixed;
+            top: 0px;
+            right: 10px;
+            z-index: 50;
+        }
+
+        #toggleMusic {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            padding: 6px;
+            border-radius: 35%;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+            left: 0;
+            right: 1000;/* cái nút âm nhạc */
+        }
+
+        #toggleMusic:hover {
+            background-color: #ffe0bd; /* màu nút nhạc */
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .content h1 {
+                font-size: 3rem;
+            }
+
+            .countdown {
+                gap: 3vw;
+            }
+
+            .unit {
+                flex: 1 1 calc(15% - 30px);
+            }
+
+            .date {
+                font-size: 1.5rem;
+            }
+
+            #footerDate {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                max-width: 80%;  /* Reduced to 80% from 90% */
+                padding: 15px;
+            }
+
+            .content h1 {
+                font-size: 5vw;
+            }
+
+            .countdown {
+                gap: 10px;
+                font-size: 7vw;
+            }
+
+            .unit {
+                flex: 1 1 calc(40% - 10px);
+            }
+
+            .date {
+                font-size: 1.2rem;
+            }
+
+            #footerDate {
+                font-size: 1rem;
+            }
+        }
+    </style>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=DAY/d=0/rs=AN8SPfrCcgxoBri2FVMQptvuOBiOsolgBw/m=el_main_css"></head>
+<body>
+    <div class="background"></div>
+
+    <div class="content">
+        <div class="date" id="currentDate">Ngày hôm nay: Thứ Năm, 26 tháng 12, 2024</div>
+        <h1>Đếm Ngược Tết Nguyên Đán 2025</h1>
+        <div class="countdown" id="countdown">
+            <div class="unit">
+                <div id="months">01</div>
+                <span>Tháng</span>
+            </div>
+            <div class="unit">
+                <div id="days">02</div>
+                <span>Ngày</span>
+            </div>
+            <div class="unit">
+                <div id="hours">02</div>
+                <span>Giờ</span>
+            </div>
+            <div class="unit">
+                <div id="minutes">59</div>
+                <span>Phút</span>
+            </div>
+            <div class="unit">
+                <div id="seconds">47</div>
+                <span>Giây</span>
+            </div>
+        </div>
+        <div class="date" id="footerDate">- Tết Nguyên Đán 2025: 29/1/2025 -</div>
+    </div>
+
+    <div class="music-controls">
+        <button id="toggleMusic">🔇</button>
+    </div>
+
+    <audio id="audio" autoplay="" loop="">
+        <source src="nhactet.mp3" type="audio/mp3">
+        Trình duyệt của mày del hỗ trợ phần tử âm thanh.
+    </audio>
+
+    <script>
+        const lunarNewYear2025 = new Date("2025-01-29T00:00:00");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = lunarNewYear2025 - now;
+
+            if (timeDifference < 0) {
+                document.getElementById("countdown").innerHTML = "Chúc Mừng Năm Mới!";
+                return;
+            }
+
+            const months = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24) % 30.44);
+            const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeDifference / 1000) % 60);
+
+            document.getElementById("months").textContent = months.toString().padStart(2, '0');
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+
+            const currentDate = now.toLocaleDateString("vi-VN", {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            document.getElementById("currentDate").textContent = `Ngày hôm nay: ${currentDate}`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const audio = document.getElementById('audio');
+        const toggleMusic = document.getElementById('toggleMusic');
+
+        toggleMusic.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                toggleMusic.textContent = '🔇';
+            } else {
+                audio.pause();
+                toggleMusic.textContent = '🔊';
+            }
+        });
+
+        window.addEventListener('load', () => {
+            audio.play().catch(() => {
+                toggleMusic.textContent = '🔊';
+            });
+        });
+    </script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
+
+
+
+</body></html>
